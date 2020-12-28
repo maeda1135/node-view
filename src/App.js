@@ -20,6 +20,7 @@ class App extends React.Component {
 // 修正3: renderメソッドにする
   render(){
     console.log("render");
+    console.log(process.env.REACT_APP_BACKEND_URL);
     console.log(this.state);
     return (
       <div className="App">
