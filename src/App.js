@@ -19,13 +19,15 @@ class App extends React.Component {
 
 // 修正3: renderメソッドにする
   render(){
+    console.log("render");
+    console.log(this.state);
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
            {/* 修正4: API呼び出し結果を反映 */}
           <p>
-            {this.state}
+            {/* {this.state} */}
           </p>
           <p>
             Hi, {this.state.name}. Edit <code>src/App.js</code> and save to reload.
