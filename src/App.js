@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {};
     // バックエンドのAPIを呼び出し、this.state.nameに結果を保管.
     // 呼び出し先はローカルとサーバ上で可変にしたいので環境変数からとる
-    fetch(process.env.REACT_APP_BACKEND_URL + "/api/user")
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/user")
       .then(response => response.json())
       .then(json =>  this.setState({name : json.name}));
   }
