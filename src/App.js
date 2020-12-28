@@ -25,6 +25,9 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
            {/* 修正4: API呼び出し結果を反映 */}
           <p>
+            {this.state}
+          </p>
+          <p>
             Hi, {this.state.name}. Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
