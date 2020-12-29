@@ -1,0 +1,22 @@
+@import "~@coreui/coreui/scss/coreui";
+
+.userLabel {
+  font-size: 16px;
+  margin-left: -45px;
+  margin-top: 10px;
+}
+.appliLabel {
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.table {
+  .titleData {
+    font-size: 20px;
+  }
+  .deleteButton {
+    text-align: center;
+  }
+}

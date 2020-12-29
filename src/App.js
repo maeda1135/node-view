@@ -13,8 +13,18 @@ class App extends React.Component {
     // バックエンドのAPIを呼び出し、this.state.nameに結果を保管.
     // 呼び出し先はローカルとサーバ上で可変にしたいので環境変数からとる
     fetch(process.env.REACT_APP_BACKEND_URL + "api/user")
-      .then(response => response.json())
-      .then(json =>  this.setState({name : json.name}));
+      // .then(response => response.json())
+      // .then(response => response.arrayBuffer())
+      .then(response => response.text())
+      .then(response => {
+        console.log("response");
+        console.log(response);
+        console.log(response[1]);
+        // console.log(response.json());
+        // var json = response.json()
+        this.setState({name : response[1].name})
+      })
+      // .then(json =>  this.setState({name : json.name}));
   }
 
 // 修正3: renderメソッドにする
