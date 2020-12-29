@@ -83,7 +83,7 @@ export const Detail = () => {
             <CContainer className="py-2">
                 <CRow>
                     <CCol lg="12" className="bg-secondary py-3">
-                        detail
+                        作成中
                     </CCol>
                 </CRow>
             </CContainer>

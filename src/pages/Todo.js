@@ -19,7 +19,8 @@ import {
     CModal,
     CModalHeader,
     CModalBody,
-    CModalFooter
+    CModalFooter,
+    CSpinner
 } from '@coreui/react'
 
 import '../style.scss';
@@ -38,6 +39,7 @@ export const Todo = () => {
     const [task_title, setTask_title] = useState('');
     const [task_detail, setTask_detail] = useState('');
     const [currentItem, setCurrentItem] = useState({});
+    const [loading, setLoading] = useState(false);
 
     const [modal, setModal] = useState(false);
 
@@ -55,6 +57,7 @@ export const Todo = () => {
 
     const resetTextField = () => {
         setTask_title('')
+        setTask_detail('')
     }
 
     const isTaskInclude = () => {
@@ -62,12 +65,14 @@ export const Todo = () => {
     }
 
     const addTask = () => {
+        setLoading(true);
         setTasks([...tasks, {
             id: tasks.length + 1,
             title: task_title,
             detail: task_detail,
         }])
         resetTextField()
+        setLoading(false);
     }
 
     const fields = [
@@ -84,11 +89,10 @@ export const Todo = () => {
     }
 
     const deleteRow = () => {
-        console.log("delete row");
-        console.log(tasks);
-        console.log(currentItem);
+        setLoading(true);
         setTasks(tasks.filter(row => row.id !== currentItem.id));
         setModal(!modal);
+        setLoading(false);
     }
 
 
@@ -200,6 +204,7 @@ export const Todo = () => {
                 <CButton color="secondary" onClick={toggle}>Cancel</CButton>
                 </CModalFooter>
             </CModal>
+            {loading ? <CSpinner className="loading" color="danger" variant="grow"/> : undefined}
         </React.Fragment>
     )
 }

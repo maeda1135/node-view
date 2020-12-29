@@ -4,10 +4,21 @@ body {
   overflow: scroll;
 }
 
+.avatar:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
 .userLabel {
   font-size: 16px;
   margin-left: -45px;
   margin-top: 10px;
+  .username {
+    color: blue;
+    &:hover {
+      color: red;
+      background-color: white;
+    }
+  }
 }
 .appliLabel {
   font-size: 35px;
@@ -30,4 +41,15 @@ body {
   .deleteButton {
     text-align: center;
   }
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
 }

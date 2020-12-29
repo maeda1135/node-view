@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import {
     // Button,
@@ -9,11 +9,21 @@ import {
     CContainer,
     CRow,
     CCol,
+    CModal,
+    CModalHeader,
+    CModalBody,
+    CModalFooter
 } from '@coreui/react'
 
 import '../style.scss';
 
 export const Header = () => {
+    const [modal, setModal] = useState(false);
+
+    const toggle = ()=>{
+        setModal(!modal);
+      }
+
     // const history = useHistory();
 
     // function detail() {
@@ -29,10 +39,11 @@ export const Header = () => {
                         <CContainer>
                             <CRow>
                                 <CCol lg="1">
-                                    <Avatar alt="user" src={`${process.env.PUBLIC_URL}/user.png`} />
+                                    <Avatar alt="user" src={`${process.env.PUBLIC_URL}/user.png`} 
+                                        onClick={toggle} className="avatar"/>
                                 </CCol>
                                 <CCol lg="9">
-                                    <label className="userLabel">ユーザー名: 玉ねぎマン</label>
+                                    <label className="userLabel">ユーザー名: <label className="username" onClick={toggle}>玉ねぎマン</label></label>
                                 </CCol>
                                 <CCol lg="2">
                                     <Link to="/"><CButton color="primary" className="homeButton">ホーム</CButton></Link>
@@ -51,6 +62,18 @@ export const Header = () => {
                     </CCol>
                 </CRow>
             </CContainer>
+            <CModal
+                show={modal}
+                onClose={toggle}
+            >
+                <CModalHeader style={{fontWeight:'bold', fontSize:'24px'}} closeButton>玉ねぎマン</CModalHeader>
+                <CModalBody style={{textAlign:'center'}}>
+                    <img alt="user" src={`${process.env.PUBLIC_URL}/user.png`} />
+                </CModalBody>
+                <CModalFooter>
+                <CButton color="secondary" onClick={toggle}>Cancel</CButton>
+                </CModalFooter>
+            </CModal>
         </React.Fragment>
     )
 }
