@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Home } from './pages/Home';
 import './App.css';
 
 // 修正1: コンストラクタを作りたいので、関数コンポーネントからクラスに修正
@@ -20,26 +21,26 @@ class App extends React.Component {
 // 修正3: renderメソッドにする
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-           {/* 修正4: API呼び出し結果を反映 */}
-          <p>
-            test
-          </p>
-          {/* <p>
-            Hi, {this.state.name}. Edit <code>src/App.js</code> and save to reload.
-          </p> */}
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          Learn React
-          </a>
-        </header>
-      </div>
+      <Home />
+      // <div className="App">
+      //   <header className="App-header">
+      //     <img src={logo} className="App-logo" alt="logo" />
+      //     <p>
+      //       test
+      //     </p>
+      //     <p>
+      //       Hi, {this.state.name}. Edit <code>src/App.js</code> and save to reload.
+      //     </p>
+      //     <a
+      //       className="App-link"
+      //       href="https://reactjs.org"
+      //       target="_blank"
+      //       rel="noopener noreferrer"
+      //     >
+      //     Learn React
+      //     </a>
+      //   </header>
+      // </div>
     );
   }
 }
