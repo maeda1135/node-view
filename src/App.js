@@ -1,6 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Home } from './pages/Home';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+// import logo from './logo.svg';
+import { Header } from './components/Header';
+import { Todo } from './pages/Todo';
+import { Detail } from './pages/Detail';
 import './App.css';
 
 // 修正1: コンストラクタを作りたいので、関数コンポーネントからクラスに修正
@@ -21,7 +24,17 @@ class App extends React.Component {
 // 修正3: renderメソッドにする
   render(){
     return (
-      <Home />
+      <>
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Todo} />
+            <Route exact path="/detail" component={Detail} />
+            {/* <Route component={Page404} /> */}
+          </Switch>
+        </BrowserRouter>
+        {/* <Home /> */}
+      </>
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />

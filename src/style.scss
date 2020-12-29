@@ -1,5 +1,9 @@
 @import "~@coreui/coreui/scss/coreui";
 
+body {
+  overflow: scroll;
+}
+
 .userLabel {
   font-size: 16px;
   margin-left: -45px;
@@ -10,6 +14,13 @@
   font-weight: bold;
   margin-left: 20px;
   margin-top: 20px;
+}
+.homeButton {
+  margin-right: 10px;
+}
+
+.prepend {
+  width: 100px;
 }
 
 .table {
