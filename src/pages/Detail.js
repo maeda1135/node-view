@@ -1,21 +1,14 @@
 import React, {useState} from 'react'
-import {
-    Button,
-    CssBaseline
-} from '@material-ui/core'
+// import {
+//     Button,
+//     CssBaseline
+// } from '@material-ui/core'
 // import {
 // } from '@coreui/coreui'
 import {
     CContainer,
     CRow,
     CCol,
-    CDataTable,
-    CButton,
-    CInputGroup,
-    CInputGroupPrepend,
-    CInputGroupText,
-    CInput,
-    CBadge,
     CCarousel,
     CCarouselIndicators,
     CCarouselInner,
@@ -37,8 +30,8 @@ export const Detail = () => {
         <React.Fragment className="detail">
             <CContainer className="py-2">
                 <CRow>
-                    <CCol xs="3"></CCol>
-                    <CCol xs="6" className="bg-secondary py-3">
+                    {/* <CCol xs="3"></CCol> */}
+                    <CCol xs="12" className="bg-secondary py-3">
                         <CCarousel activeIndex={activeIndex}>
                             <CCarouselIndicators/>
                             <CCarouselInner>
@@ -63,7 +56,7 @@ export const Detail = () => {
                             <CCarouselControl direction="next"/>
                         </CCarousel>
                     </CCol>
-                    <CCol xs="3"></CCol>
+                    {/* <CCol xs="3"></CCol> */}
                 </CRow>
             </CContainer>
         </React.Fragment>
