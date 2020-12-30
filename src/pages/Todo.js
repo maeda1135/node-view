@@ -103,10 +103,10 @@ export const Todo = () => {
         <React.Fragment>
             <CContainer className="py-2">
                 <CRow>
-                    <CCol lg="12" className="bg-secondary py-3">
+                    <CCol lg="12" md="12" sm="12" className="bg-secondary py-3">
                         <CContainer>
                             <CRow className="py-3">
-                                <CCol lg="6">
+                                <CCol lg="6" md="6" sm="6">
                                     <CInputGroup>
                                         <CInputGroupPrepend>
                                         <CInputGroupText className='prepend bg-info text-white'>
@@ -117,10 +117,10 @@ export const Todo = () => {
                                             placeholder="タイトルを入力してください"/>
                                     </CInputGroup>
                                 </CCol>
-                                <CCol lg="6"></CCol>
+                                <CCol lg="6" md="6" sm="6"></CCol>
                             </CRow>
                             <CRow>
-                                <CCol lg="6">
+                                <CCol lg="6" md="6" sm="6">
                                     <CInputGroup>
                                         <CInputGroupPrepend>
                                         <CInputGroupText className='prepend bg-info text-white'>
@@ -131,11 +131,11 @@ export const Todo = () => {
                                             placeholder="詳細を入力してください"/>
                                     </CInputGroup>
                                 </CCol>
-                                <CCol lg="6"></CCol>
+                                <CCol lg="6" md="6" sm="6"></CCol>
                             </CRow>
                             <CRow>
-                                <CCol lg="11"></CCol>
-                                <CCol lg="1">
+                                <CCol lg="11" md="11" sm="11"></CCol>
+                                <CCol lg="1" md="1" sm="1">
                                     <Button
                                         disabled={(task_title === '' || task_detail === '') || isTaskInclude()}
                                         variant='contained'
@@ -153,7 +153,7 @@ export const Todo = () => {
             </CContainer>
             <CContainer className="table">
                 <CRow>
-                    <CCol>
+                    <CCol lg="12" md="12" sm="12">
                         <CDataTable
                             items={tasks}
                             fields={fields}
