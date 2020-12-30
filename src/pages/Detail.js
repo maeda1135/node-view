@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useReducer} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import {
     Button,
     CssBaseline
@@ -18,6 +19,8 @@ import {
     CBadge
 } from '@coreui/react'
 
+import { initialState, reducer } from '../reducer/reducer';
+
 import '../style.scss';
 
 const INITIAL_TASK = [
@@ -30,8 +33,14 @@ const INITIAL_TASK = [
 ]
 
 export const Detail = () => {
+    // const [state, dispatch] = useReducer(reducer, initialState)
+    // const dispatch = useDispatch();
+    const count = useSelector(state => state.count);
     const [tasks, setTasks] = useState(INITIAL_TASK)
     const [task_title, setTask_title] = useState('')
+
+    console.log("test2");
+    console.log(count);
 
     const handleTextFieldChanges = e => {
         setTask_title(e.target.value)
