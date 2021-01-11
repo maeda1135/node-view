@@ -1,9 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import logo from './logo.svg';
+import { Login } from './pages/Login';
 import { Header } from './components/Header';
+import { Home } from './pages/Home';
 import { Todo } from './pages/Todo';
 import { Detail } from './pages/Detail';
+import { TestPage } from './pages/TestPage';
 import './App.css';
 
 // 修正1: コンストラクタを作りたいので、関数コンポーネントからクラスに修正
@@ -26,11 +29,20 @@ class App extends React.Component {
     return (
       <>
         <BrowserRouter>
-          <Header />
           <Switch>
-            <Route exact path="/" component={Todo} />
-            <Route exact path="/detail" component={Detail} />
-            {/* <Route component={Page404} /> */}
+            <Route exact path="/" component={Login} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/test" component={TestPage} />
+            <Route>
+              <Header />
+              <Switch>
+                {/* <Route exact path="/" component={Login} />
+                <Route exact path="/home" component={Home} /> */}
+                <Route exact path="/todo" component={Todo} />
+                <Route exact path="/detail" component={Detail} />
+                {/* <Route component={Page404} /> */}
+              </Switch>
+            </Route>
           </Switch>
         </BrowserRouter>
         {/* <Home /> */}

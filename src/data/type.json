@@ -1,0 +1,22 @@
+[
+    {
+        "type": "",
+        "label": ""
+    },
+    {
+        "type": "house",
+        "label": "家事"
+    },
+    {
+        "type": "play",
+        "label": "娯楽"
+    },
+    {
+        "type": "work",
+        "label": "仕事"
+    },
+    {
+        "type": "other",
+        "label": "その他"
+    }
+]

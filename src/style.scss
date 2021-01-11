@@ -4,6 +4,21 @@ body {
   overflow: scroll;
 }
 
+.login {
+  height: 100vh;
+  background-color: #ccffff;
+  text-align: center;
+  .space {
+    height: 100px;
+  }
+  .usernameError {
+    border-color: red;
+  }
+  .passwordError {
+    border-color: red;
+  }
+}
+
 .avatar:hover {
   cursor: pointer;
   opacity: 0.5;
@@ -29,9 +44,19 @@ body {
 .homeButton {
   margin-right: 10px;
 }
+.detailButton {
+  margin-right: 10px;
+}
 
 .prepend {
   width: 100px;
+}
+
+.typeSelectBox {
+  width: 100px;
+  height: 30px;
+  border-color: white;
+  border-radius: 5px;
 }
 
 .table {
@@ -45,6 +70,24 @@ body {
 
 .img {
   height: 500px;
+}
+
+.detail {
+  .image {
+    width: 400px;
+    height: 300px;
+    border: 1px #eeeeee solid;
+  }
+  .mediaTitle {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .mediaContent {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 .loading {

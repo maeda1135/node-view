@@ -42,12 +42,14 @@ export const Header = () => {
                                     <Avatar alt="user" src={`${process.env.PUBLIC_URL}/user.png`} 
                                         onClick={toggle} className="avatar"/>
                                 </CCol>
-                                <CCol xs="9" lg="9" md="9" sm="9">
+                                <CCol xs="7" lg="7" md="7" sm="7">
                                     <label className="userLabel">ユーザー名: <label className="username" onClick={toggle}>玉ねぎマン</label></label>
                                 </CCol>
-                                <CCol xs="2" lg="2" md="2" sm="2">
-                                    <Link to="/"><CButton color="primary" className="homeButton">ホーム</CButton></Link>
-                                    <Link to="/detail"><CButton color="warning">詳細</CButton></Link>
+                                <CCol xs="4" lg="4" md="4" sm="4">
+                                    <Link to="/home"><CButton color="info" className="homeButton">HOME</CButton></Link>
+                                    <Link to="/todo"><CButton color="primary" className="homeButton">TODO</CButton></Link>
+                                    <Link to="/detail"><CButton color="warning" className="detailButton">詳細</CButton></Link>
+                                    <Link to="/"><CButton color="danger">ログアウト</CButton></Link>
                                 </CCol>
                             </CRow>
                             <CRow>

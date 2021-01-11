@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Reactのお勉強",
+        "detail": "Reactのお勉強をします",
+        "type": "work"
+    },
+    {
+        "id": 2,
+        "title": "買い物",
+        "detail": "コンビニに買い物に行きます",
+        "type": "house"
+    },
+    {
+        "id": 3,
+        "title": "掃除",
+        "detail": "リビングの掃除をします",
+        "type": "house"
+    },
+    {
+        "id": 4,
+        "title": "読書",
+        "detail": "漫画本を読みます",
+        "type": "play"
+    },
+    {
+        "id": 5,
+        "title": "書類整理",
+        "detail": "仕事に使う書類を整理します",
+        "type": "work"
+    },
+    {
+        "id": 6,
+        "title": "テスト",
+        "detail": "ただのテストです",
+        "type": "other"
+    }
+]

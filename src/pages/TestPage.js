@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useHistory } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import {
     Card
@@ -8,8 +9,7 @@ import {
     CContainer,
     CRow,
     CCol,
-    CMedia,
-    CMediaBody,
+    CButton,
     CCarousel,
     CCarouselIndicators,
     CCarouselInner,
@@ -24,86 +24,22 @@ import '../style.scss';
 
 import types from '../data/type.json'
 
-export const Detail = () => {
+export const TestPage = () => {
+    const history = useHistory();
     const [activeIndex, setActiveIndex] = useState(0)
 
-    const name = useSelector(state => state.todo.name);
-    const todos = useSelector(state => state.todo.todos);
-    console.log("selector2");
-    console.log(name);
-    console.log(todos);
-
-    const house = todos.filter( function( todo ) {
-        return todo.type === 'house';
-    })
-    const play = todos.filter( function( todo ) {
-        return todo.type === 'play';
-    })
-    const work = todos.filter( function( todo ) {
-        return todo.type === 'work';
-    })
-    const other = todos.filter( function( todo ) {
-        return todo.type === 'other';
-    })
-    console.log("xxx");
-    console.log(house);
-    console.log(play);
-    console.log(work);
-    console.log(other);
-
-    const createMedia = (type) => {
-        console.log("createMedia");
-        console.log(type);
-        if (!type.type) {
-            return (
-                <></>
-            )
-        } else {
-            let lengthStr = 0;
-            switch (type.type) {
-                case 'house':
-                    lengthStr = house.length;
-                    break;
-                case 'play':
-                    lengthStr = play.length;
-                    break;
-                case 'work':
-                    lengthStr = work.length;
-                    break;
-                case 'other':
-                    lengthStr = other.length;
-                    break;
-                default:
-                    return;
-            }
-            return (
-                <CCol xs="6" className="py-2">
-                    <Card variant="outlined">
-                        <CMedia>
-                            <img className="image" src={`${process.env.PUBLIC_URL}/${type.type}.png`} height="50"/>
-                            <CMediaBody>
-                                <h5 className="mediaTitle">{type.label}</h5>
-                                <hr />
-                                <p className="mediaContent">
-                                    {lengthStr}件
-                                </p>
-                            </CMediaBody>
-                        </CMedia>
-                    </Card>
-                </CCol>
-            );
-        }
+    const goHome = ()=>{
+        history.push("/home");
     }
-
-    console.log("return");
 
     return (
         <React.Fragment>
             <CContainer className="detail py-2">
                 <CRow>
-                {types.map((type) =>
-                    createMedia(type)
-                )};
+                    <CCol xs="10" className="bg-secondary py-3"></CCol>
+                    <CCol xs="2" className="bg-secondary py-3">
+                        <CButton color="info" onClick={goHome}>HOME</CButton>
+                    </CCol>
                 </CRow>
                 <CRow>
                     <CCol xs="12" className="bg-secondary py-3">
